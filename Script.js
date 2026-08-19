@@ -8,66 +8,114 @@
    MOBILE NAVIGATION
 ===================================================== */
 
-const menu = document.querySelector(".menu");
-const nav = document.querySelector("header nav");
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
 
 
-if (menu && nav) {
+    if (!menuToggle || !mainNav) {
+        return;
+    }
 
-    menu.addEventListener("click", function () {
 
-        nav.classList.toggle("open");
+    /* =====================================
+       OPEN / CLOSE MENU
+    ===================================== */
 
-        if (nav.classList.contains("open")) {
+    menuToggle.addEventListener("click", function () {
 
-            menu.innerHTML = "✕";
+        const isOpen =
+            menuToggle.classList.toggle("active");
 
-            menu.setAttribute(
-                "aria-label",
-                "Close navigation"
+        mainNav.classList.toggle("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+        );
+
+    });
+
+
+    /* =====================================
+       CLOSE MENU WHEN LINK IS CLICKED
+    ===================================== */
+
+    const navLinks =
+        mainNav.querySelectorAll("a");
+
+
+    navLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            menuToggle.classList.remove("active");
+
+            mainNav.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
             );
 
-        } else {
-
-            menu.innerHTML = "☰";
-
-            menu.setAttribute(
+            menuToggle.setAttribute(
                 "aria-label",
-                "Open navigation"
+                "Open navigation menu"
+            );
+
+        });
+
+    });
+
+
+    /* =====================================
+       CLOSE MENU WHEN CLICKING OUTSIDE
+    ===================================== */
+
+    document.addEventListener("click", function (event) {
+
+        if (
+            !mainNav.contains(event.target) &&
+            !menuToggle.contains(event.target)
+        ) {
+
+            menuToggle.classList.remove("active");
+
+            mainNav.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
             );
 
         }
 
     });
 
-}
 
-    
-/* =====================================================
-   CLOSE MOBILE MENU WHEN LINK IS CLICKED
-===================================================== */
+    /* =====================================
+       CLOSE MENU WHEN SCREEN BECOMES DESKTOP
+    ===================================== */
 
-const navLinks = document.querySelectorAll(
-    "header nav a"
-);
+    window.addEventListener("resize", function () {
 
-navLinks.forEach(function (link) {
+        if (window.innerWidth > 768) {
 
-    link.addEventListener("click", function () {
+            menuToggle.classList.remove("active");
 
-        if (nav) {
+            mainNav.classList.remove("active");
 
-            nav.classList.remove("open");
-
-        }
-
-        if (menu) {
-
-            menu.innerHTML = "☰";
-
-            menu.setAttribute(
-                "aria-label",
-                "Open navigation"
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
             );
 
         }
