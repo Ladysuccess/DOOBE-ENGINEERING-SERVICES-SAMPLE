@@ -218,6 +218,35 @@ textarea {
     background: var(--navy);
     transform: translateY(-2px);
 }
+#navMenu {
+    display: flex;
+    gap: 25px;
+}
+
+.menu-btn {
+    display: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+        font-size: 28px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    #navMenu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #navMenu.active {
+        display: flex;
+    }
+}
 
 
 /* ---------- MOBILE MENU ---------- */
