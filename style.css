@@ -886,7 +886,456 @@ h2 em {
 
     font-size: 20px;
 }
+/* =====================================================
+   PROJECT PAGE
+===================================================== */
 
+
+/* =====================================================
+   PROJECT STATS
+===================================================== */
+
+.project-stats {
+    background: #111;
+    color: #fff;
+}
+
+.project-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.project-stat-grid > div {
+    padding: 35px 25px;
+    border-right: 1px solid rgba(255,255,255,0.15);
+}
+
+.project-stat-grid > div:last-child {
+    border-right: none;
+}
+
+.project-stat-grid strong {
+    display: block;
+    color: #c8102e;
+    font-family: "Manrope", sans-serif;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.project-stat-grid span {
+    color: #ddd;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   FEATURED PROJECT
+===================================================== */
+
+.featured-project {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    background: #fff;
+    border: 1px solid #e3e3e3;
+}
+
+.featured-project-image {
+    min-height: 520px;
+    overflow: hidden;
+}
+
+.featured-project-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+    object-fit: cover;
+    display: block;
+}
+
+.featured-project-content {
+    padding: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-label {
+    display: block;
+    color: #c8102e;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+.featured-project-content h3 {
+    font-family: "Manrope", sans-serif;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.featured-project-content > p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   PROJECT DETAILS
+===================================================== */
+
+.project-details {
+    margin-top: 25px;
+    border-top: 1px solid #ddd;
+}
+
+.project-details > div {
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.project-details span {
+    display: block;
+    color: #999;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.project-details strong {
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   PROJECT GRID
+===================================================== */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.project-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    overflow: hidden;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+}
+
+
+/* =====================================================
+   PROJECT IMAGE
+===================================================== */
+
+.project-image {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.06);
+}
+
+.project-image span {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #c8102e;
+    color: #fff;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   PROJECT CONTENT
+===================================================== */
+
+.project-content {
+    padding: 28px;
+}
+
+.project-content small {
+    display: block;
+
+    color: #c8102e;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    margin-bottom: 10px;
+}
+
+.project-content h3 {
+    font-family: "Manrope", sans-serif;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.project-content p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+
+/* =====================================================
+   PROJECT TAGS
+===================================================== */
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 20px;
+}
+
+.project-tags span {
+    padding: 7px 10px;
+
+    background: #f2f2f2;
+
+    color: #555;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   PROJECT PROCESS
+===================================================== */
+
+.project-process {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid rgba(255,255,255,0.15);
+    border-left: 1px solid rgba(255,255,255,0.15);
+}
+
+.project-process > div {
+    padding: 35px;
+
+    border-right: 1px solid rgba(255,255,255,0.15);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.project-process span {
+    display: block;
+
+    color: #c8102e;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+.project-process h3 {
+    color: #fff;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 20px;
+
+    margin-bottom: 12px;
+}
+
+.project-process p {
+    color: #bdbdbd;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   PROJECT GALLERY
+===================================================== */
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.project-gallery figure {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.project-gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.project-gallery figure:hover img {
+    transform: scale(1.05);
+}
+
+.project-gallery figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 20px 15px;
+
+    color: #fff;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,0.85)
+    );
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   PORTFOLIO NOTE
+===================================================== */
+
+.portfolio-note {
+    background: #f5f5f5;
+}
+
+.portfolio-note > .container > div {
+    max-width: 850px;
+}
+
+.portfolio-note h2 {
+    margin-bottom: 25px;
+}
+
+.portfolio-note p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .project-stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .featured-project {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-project-image,
+    .featured-project-image img {
+        min-height: 400px;
+    }
+
+    .project-process {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .project-stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-stat-grid > div {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-project-content {
+        padding: 30px 24px;
+    }
+
+    .featured-project-content h3 {
+        font-size: 25px;
+    }
+
+    .featured-project-image,
+    .featured-project-image img {
+        min-height: 300px;
+    }
+
+    .project-process {
+        grid-template-columns: 1fr;
+    }
+
+    .project-process > div {
+        padding: 25px;
+    }
+
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .project-gallery img {
+        height: 260px;
+    }
+
+}
 
 /* =====================================================
    WHY DOOBE
