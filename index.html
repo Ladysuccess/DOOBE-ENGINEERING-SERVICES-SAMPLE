@@ -114,24 +114,19 @@
 
 <header class="header">
 
-    <div class="container nav-wrap">
+    <div class="container">
 
+        <a href="index.html" class="brand">
 
-        <!-- LOGO -->
-        <a class="brand"
-            href="index.html">
+            <img
+                src="logo.jpg"
+                alt="DOOBE Engineering & Services Ltd"
+                class="site-logo"
+            >
 
-         <img
-    src="logo.jpg"
-    alt="DOOBE Engineering & Services Ltd Logo"
-    class="site-logo"
->
+            <div class="brand-text">
 
-             <div class="brand-text">
-
-                <b>
-                    DOOBE
-                </b>
+                <strong>DOOBE</strong>
 
                 <small>
                     ENGINEERING & SERVICES LTD.
@@ -142,8 +137,44 @@
         </a>
 
 
-           color: var(--navy);
-}
+        <button
+            class="menu"
+            id="menuToggle"
+            type="button"
+            aria-label="Open menu"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <nav id="mainNav">
+
+            <a href="index.html">Home</a>
+
+            <a href="services.html">Services</a>
+
+            <a href="projects.html">Projects</a>
+
+            <a href="field-skills.html">Field Skills</a>
+
+            <a href="about.html">About Us</a>
+
+            <a
+                href="index.html#contact"
+                class="nav-cta"
+            >
+                Request a Quote
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
 
 
 <!-- =====================================================
@@ -154,7 +185,7 @@
 
 
 <!-- =====================================================
-     HERO SECTION
+     HERO SECTION 
 ===================================================== -->
 
 <section class="hero">
