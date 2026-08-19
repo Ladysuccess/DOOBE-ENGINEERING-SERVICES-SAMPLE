@@ -358,3 +358,49 @@ document.addEventListener(
 
     }
 );
+/* =====================================================
+   SCROLL REVEAL ANIMATION
+===================================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   HEADER SCROLL EFFECT
+===================================================== */
+
+.header.scrolled {
+    box-shadow: 0 8px 30px rgba(8, 16, 51, 0.08);
+}
+
+
+/* =====================================================
+   STAGGERED CARD ANIMATION
+===================================================== */
+
+.cards article:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.cards article:nth-child(2) {
+    transition-delay: 0.10s;
+}
+
+.cards article:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.cards article:nth-child(4) {
+    transition-delay: 0.20s;
+}
