@@ -329,5 +329,33 @@ window.addEventListener(
         passive: true
     }
 );
+/* =====================================================
+   ESCAPE KEY CLOSES MOBILE NAV
+===================================================== */
 
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key === "Escape" &&
+            nav &&
+            nav.classList.contains("open")
+        ) {
+
+            nav.classList.remove(
+                "open"
+            );
+
+
+            if (menu) {
+
+                menu.innerHTML = "☰";
+
+            }
+
+        }
+
+    }
+);
 
