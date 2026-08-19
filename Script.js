@@ -1,3 +1,5 @@
+Java 
+
 /* =====================================================
    DOOBE ENGINEERING & SERVICES
    MAIN JAVASCRIPT
@@ -8,114 +10,66 @@
    MOBILE NAVIGATION
 ===================================================== */
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    const menuToggle = document.getElementById("menuToggle");
-    const mainNav = document.getElementById("mainNav");
+const menu = document.querySelector(".menu");
+const nav = document.querySelector("header nav");
 
 
-    if (!menuToggle || !mainNav) {
-        return;
-    }
+if (menu && nav) {
 
+    menu.addEventListener("click", function () {
 
-    /* =====================================
-       OPEN / CLOSE MENU
-    ===================================== */
+        nav.classList.toggle("open");
 
-    menuToggle.addEventListener("click", function () {
+        if (nav.classList.contains("open")) {
 
-        const isOpen =
-            menuToggle.classList.toggle("active");
+            menu.innerHTML = "✕";
 
-        mainNav.classList.toggle("active");
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            isOpen
-        );
-
-        menuToggle.setAttribute(
-            "aria-label",
-            isOpen
-                ? "Close navigation menu"
-                : "Open navigation menu"
-        );
-
-    });
-
-
-    /* =====================================
-       CLOSE MENU WHEN LINK IS CLICKED
-    ===================================== */
-
-    const navLinks =
-        mainNav.querySelectorAll("a");
-
-
-    navLinks.forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-            menuToggle.classList.remove("active");
-
-            mainNav.classList.remove("active");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            menuToggle.setAttribute(
+            menu.setAttribute(
                 "aria-label",
-                "Open navigation menu"
+                "Close navigation"
             );
 
-        });
+        } else {
 
-    });
+            menu.innerHTML = "☰";
 
-
-    /* =====================================
-       CLOSE MENU WHEN CLICKING OUTSIDE
-    ===================================== */
-
-    document.addEventListener("click", function (event) {
-
-        if (
-            !mainNav.contains(event.target) &&
-            !menuToggle.contains(event.target)
-        ) {
-
-            menuToggle.classList.remove("active");
-
-            mainNav.classList.remove("active");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
+            menu.setAttribute(
+                "aria-label",
+                "Open navigation"
             );
 
         }
 
     });
 
+}
 
-    /* =====================================
-       CLOSE MENU WHEN SCREEN BECOMES DESKTOP
-    ===================================== */
 
-    window.addEventListener("resize", function () {
+/* =====================================================
+   CLOSE MOBILE MENU WHEN LINK IS CLICKED
+===================================================== */
 
-        if (window.innerWidth > 768) {
+const navLinks = document.querySelectorAll(
+    "header nav a"
+);
 
-            menuToggle.classList.remove("active");
+navLinks.forEach(function (link) {
 
-            mainNav.classList.remove("active");
+    link.addEventListener("click", function () {
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
+        if (nav) {
+
+            nav.classList.remove("open");
+
+        }
+
+        if (menu) {
+
+            menu.innerHTML = "☰";
+
+            menu.setAttribute(
+                "aria-label",
+                "Open navigation"
             );
 
         }
