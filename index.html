@@ -74,7 +74,14 @@
     </script>
 
 </head>
+<script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navMenu = document.getElementById("navMenu");
 
+    menuBtn.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+    });
+</script>
 
 <body>
 
@@ -149,45 +156,23 @@
 
 
         <!-- NAVIGATION -->
-        <nav id="navMenu">
-                <a href="index.html">
+        <header>
+    <div class="logo">
+        <a href="index.html">Your Logo</a>
+    </div>
 
-                Home
+    <button class="menu-btn" id="menuBtn">
+        ☰
+    </button>
 
-            </a>
-
-            <a href="services.html">
-
-                Services
-
-            </a>
-
-            <a href="projects.html">
-
-                Projects
-
-            </a>
-
-            <a href="field-skills.html">
-
-                Field Skills
-
-            </a>
-
-            <a href="about.html">
-
-                About
-
-            </a>
-
-            <a href="#contact"
-                class="nav-btn">
-
-                Request a Quote
-
-            </a>
-
-        </nav>
+    <nav id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="field-skills.html">Field Skills</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
     </div>
 
