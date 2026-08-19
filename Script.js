@@ -10,74 +10,37 @@ Java
    MOBILE NAVIGATION
 ===================================================== */
 
-const menu = document.querySelector(".menu");
-const nav = document.querySelector("header nav");
+document.addEventListener("DOMContentLoaded", function () {
 
+    const menu = document.getElementById("menuToggle");
+    const nav = document.getElementById("mainNav");
 
-if (menu && nav) {
+    if (!menu || !nav) {
+        return;
+    }
 
     menu.addEventListener("click", function () {
 
         nav.classList.toggle("open");
 
-        if (nav.classList.contains("open")) {
-
-            menu.innerHTML = "✕";
-
-            menu.setAttribute(
-                "aria-label",
-                "Close navigation"
-            );
-
-        } else {
-
-            menu.innerHTML = "☰";
-
-            menu.setAttribute(
-                "aria-label",
-                "Open navigation"
-            );
-
-        }
+        menu.classList.toggle("active");
 
     });
 
-}
 
+    nav.querySelectorAll("a").forEach(function (link) {
 
-/* =====================================================
-   CLOSE MOBILE MENU WHEN LINK IS CLICKED
-===================================================== */
-
-const navLinks = document.querySelectorAll(
-    "header nav a"
-);
-
-navLinks.forEach(function (link) {
-
-    link.addEventListener("click", function () {
-
-        if (nav) {
+        link.addEventListener("click", function () {
 
             nav.classList.remove("open");
 
-        }
+            menu.classList.remove("active");
 
-        if (menu) {
-
-            menu.innerHTML = "☰";
-
-            menu.setAttribute(
-                "aria-label",
-                "Open navigation"
-            );
-
-        }
+        });
 
     });
 
 });
-
 
 /* =====================================================
    WHATSAPP QUOTE FORM
